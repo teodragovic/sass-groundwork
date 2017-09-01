@@ -1,0 +1,30 @@
+
+// Hard reset
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl, dd, ol, ul, li,
+form, fieldset, legend,
+table, th, td, caption,
+figure, blockquote,
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+// Completely resets form items.
+// Super hard reset that removes all borders
+// and radius of all form items.
+input,
+textarea,
+button {
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  appearance: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}

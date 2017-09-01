@@ -1,0 +1,123 @@
+
+// Breakpoint mixin
+// @param {String} $breakpoint - Breakpoint value (usually via variables)
+// @param {String} $respond - Breakpoint type (defaults to min-width)
+// @requires $breakpoint
+@mixin bp($breakpoint, $respond: min-width) {
+  @media screen and ($respond: $breakpoint) {
+    @content;
+  }
+}
+
+// Breakpoint helper mixins
+@mixin at-min($breakpoint) {
+  @include bp(em($breakpoint, 16), min-width) {
+    @content;
+  }
+}
+
+@mixin at-max($breakpoint) {
+  @include bp(em($breakpoint - 1, 16), max-width) {
+    @content;
+  }
+}
+
+
+// Mixin helping defining both `width` and `height` simultaneously.
+// @param {Length} $width - Element’s `width`
+// @param {Length} $height [$width] - Element’s `height`
+@mixin size($width, $height: $width) {
+  height: $height;
+  width: $width;
+}
+
+
+// Bourbon.io positioning mixin
+@mixin position ($position: relative, $coordinates: null null null null) {
+  @if type-of($position)==list {
+    $coordinates: $position;
+    $position: relative;
+  }
+  $coordinates: unpack($coordinates);
+  $top: nth($coordinates, 1);
+  $right: nth($coordinates, 2);
+  $bottom: nth($coordinates, 3);
+  $left: nth($coordinates, 4);
+  position: $position;
+  @if (not ($top==null)) {
+    top: $top;
+  }
+  @if (not ($right==null)) {
+    right: $right;
+  }
+  @if (not ($bottom==null)) {
+    bottom: $bottom;
+  }
+  @if (not ($left==null)) {
+    left: $left;
+  }
+}
+
+
+// Positioning helper mixins
+@mixin absolute($args) {
+  @include position(absolute, $args);
+}
+
+@mixin fixed($args) {
+  @include position(fixed, $args);
+}
+
+@mixin relative($args) {
+  @include position(relative, $args);
+}
+
+
+// Helper mixin to provide simple API to selector nesting
+// @param {String} $selector - Selector
+@mixin when-inside($selector) {
+  #{$selector} & {
+    @content;
+  }
+}
+
+
+// Clearfix mixin to use on layout classes that utilize floats for layout
+@mixin clearfix {
+  &:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+
+// Cross-browser mixin for styling placeholder text
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+// Advanced font rendering thingy
+@mixin font-smoothing($val: on) {
+  @if $val == "on" {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  } @else if $val == "off" {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}

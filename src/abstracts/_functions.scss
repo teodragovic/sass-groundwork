@@ -1,0 +1,45 @@
+
+@import "variables";
+
+// Unpacking function used in position() mixin, copied from bourbon.io codebase (MIT license).
+@function unpack($shorthand) {
+  @if length($shorthand)==1 {
+    @return nth($shorthand, 1) nth($shorthand, 1) nth($shorthand, 1) nth($shorthand, 1);
+  }
+  @else if length($shorthand)==2 {
+    @return nth($shorthand, 1) nth($shorthand, 2) nth($shorthand, 1) nth($shorthand, 2);
+  }
+  @else if length($shorthand)==3 {
+    @return nth($shorthand, 1) nth($shorthand, 2) nth($shorthand, 3) nth($shorthand, 2);
+  }
+  @else {
+    @return $shorthand;
+  }
+}
+
+
+// Function for writing values in pixel values and get output in ems.
+@function em($font-px, $base: $base-font-size) {
+  @return #{$font-px/$base}em;
+}
+
+
+// Match tracking values from Adobe Photoshop to em value.
+// To be used with letter-spacing property.
+@function track($val) {
+  @return #{$val/1000}em;
+}
+
+
+// Returns value from nested Sass map.
+// Provided by Hugo Giraudel (reference: https://hugogiraudel.com/2013/08/12/sass-functions/)
+@function match($haystack, $needle) {
+  @each $item in $haystack {
+    $index: index($item, $needle);
+    @if $index {
+      $return: if($index==1, 2, $index);
+      @return nth($item, $return);
+    }
+  }
+  @return false;
+}

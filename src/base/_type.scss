@@ -1,0 +1,58 @@
+
+@import "../abstracts/variables";
+
+// Set base font size
+html {
+  font-size: percentage($base-font-size / 16);
+}
+
+/**
+ * Typography settings:
+ * 1: Inherit base font size from root element (html)
+ * 2: Always allow for font kerning
+ * 3: https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust
+ * 4: Enable advance type features (kerning and ligatures) if typeface supports them
+ * 5: Make sure kerning and ligatures are enabled at all times
+ * 6: Enable antialiasing where supported to make fonts smoother
+ * 7: On smaller screens, smooth font looks blurry so turn off antialiasing
+ */
+
+body {
+  font-size: 100%; /* 1 */
+  font-kerning: normal; /* 2 */
+  text-size-adjust: 100%; /* 3 */
+  font-feature-settings: "liga", "kern"; /* 4 */
+  text-rendering: optimizeLegibility; /* 5 */
+  @include font-smoothing(on); /* 6 */
+  @include at-max($bp-small) {
+    @include font-smoothing(off); /* 7 */
+  }
+
+  // Default stack for system fonts
+  // Reference: https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+
+  line-height: $base-line-height;
+
+}
+
+// 1: Normalize all heading sizes
+//    Reference: https://csswizardry.com/2016/02/managing-typography-on-large-apps/
+// 2: Nuke the top margin to avoid margin collapsing and easier type control
+//    Reference: https://csswizardry.com/2012/06/single-direction-margin-declarations/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 2em; /* 1 */
+  margin-top: 0; /* 2 */
+}
+
+a[role="button"] {
+  cursor: pointer;
+}
