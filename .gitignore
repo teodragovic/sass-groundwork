@@ -1,0 +1,7 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+node_modules
+.DS_Store
+npm-debug.log
+.cache
+Thumbs.db
