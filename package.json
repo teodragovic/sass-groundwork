@@ -1,0 +1,15 @@
+{
+  "name": "sass-groundwork",
+  "version": "0.0.1",
+  "description": "Sass collection of various Sass helpers (functions and mixins) and some basic CSS definitions.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teodragovic/sass-groundwork.git"
+  },
+  "author": "Teo Dragovic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/teodragovic/sass-groundwork/issues"
+  },
+  "homepage": "https://github.com/teodragovic/sass-groundwork#readme"
+}
