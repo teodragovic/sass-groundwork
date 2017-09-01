@@ -1,6 +1,6 @@
 {
   "name": "sass-groundwork",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Sass collection of various Sass helpers (functions and mixins) and some basic CSS definitions.",
   "repository": {
     "type": "git",
