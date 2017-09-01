@@ -6,8 +6,10 @@
   @-ms-viewport { width: device-width; }
 }
 
-// Use border-box for everything
 html {
+  // Define height on root element so we can define <body> height in percentage
+  height: 100%;
+  // Use border-box for everything
   box-sizing: border-box;
 }
 
@@ -17,18 +19,14 @@ html {
   box-sizing: inherit;
 }
 
-html,
-body,
-[id="root"] {
-  height: 100%;
-}
-
 body {
   // Remove gray highlight when tapping links in mobile Safari
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   // Setting @viewport causes scrollbars to overlap content in IE11 and Edge, so
   // we force a non-overlapping, non-auto-hiding scrollbar to counteract
   -ms-overflow-style: scrollbar;
+  // Fill browser window by default
+  min-height: 100%;
 }
 
 // Suppress the focus outline on elements that cannot be accessed via keyboard.
