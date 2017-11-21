@@ -1,7 +1,8 @@
 
-@import "variables";
+@import "abstract.variables";
 
-// Unpacking function used in position() mixin, copied from bourbon.io codebase (MIT license).
+// Unpacking function used in position() mixin
+// By bourbon.io (MIT license).
 @function unpack($shorthand) {
   @if length($shorthand)==1 {
     @return nth($shorthand, 1) nth($shorthand, 1) nth($shorthand, 1) nth($shorthand, 1);
@@ -18,7 +19,7 @@
 }
 
 
-// Function for writing values in pixel values and get output in ems.
+// Function for writing values in pixels and get output in ems.
 @function em($font-px, $base: $base-font-size) {
   @return #{$font-px/$base}em;
 }
@@ -32,7 +33,7 @@
 
 
 // Returns value from nested Sass map.
-// Provided by Hugo Giraudel (reference: https://hugogiraudel.com/2013/08/12/sass-functions/)
+// By Hugo Giraudel (reference: https://hugogiraudel.com/2013/08/12/sass-functions/)
 @function match($haystack, $needle) {
   @each $item in $haystack {
     $index: index($item, $needle);
@@ -42,4 +43,15 @@
     }
   }
   @return false;
+}
+
+
+// Returns z-index value from Sass map.
+// By Hugo Giraudel (reference: https://www.sitepoint.com/better-solution-managing-z-index-sass/)
+@function z($layer) {
+  $z-layers: () !default;
+  @if not map-has-key($z-layers, $layer) {
+    @warn "No layer found for `#{$layer}` in $z-layers map. Property omitted.";
+  }
+  @return map-get($z-layers, $layer);
 }
