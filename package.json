@@ -1,7 +1,7 @@
 {
   "name": "sass-groundwork",
   "version": "1.0.0",
-  "description": "Sass collection of various Sass helpers (functions and mixins) and some basic CSS definitions.",
+  "description": "Collection of reusable Sass helpers, CSS resets and utility classes",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/teodragovic/sass-groundwork.git"

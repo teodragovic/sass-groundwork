@@ -1,0 +1,63 @@
+
+/**
+ * These classes have `!important` flag used proactively to force immutability,
+ * meaning these classes will always trump any component-based styles.
+ * Use them only when sure that property need to stay the
+ * same under all circumstances (diffrent viewports, hover states...).
+ */
+
+/*========================================*\
+    $ACESSIBILITY
+\*========================================*/
+
+// Hide only visually, but have it available for screenreaders: h5bp.com/v
+.u-visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: 0;
+}
+
+// Extends the .u-visuallyhidden class to allow the element to be focusable
+.u-visuallyhidden.is-focusable:active,
+.u-visuallyhidden.is-focusable:focus {
+  position: static;
+  overflow: visible;
+  clip: auto;
+  margin: 0;
+  width: auto;
+  height: auto;
+}
+
+.u-hidden { display: none !important; }
+
+/*========================================*\
+    $COLOR
+\*========================================*/
+
+.u-color--current { color: currentColor !important; }
+
+/*========================================*\
+    $POSITION
+\*========================================*/
+
+// we don't use utility classes for absolute and fixed position since
+// they usually require additional properties (top, left...)
+.u-relative { position: relative !important; }
+.u-static   { position: static !important; }
+
+.u-block        { display: block !important; }
+.u-inline-block { display: inline-block !important; }
+.u-inline       { display: inline !important; }
+
+.u-center { margin: 0 auto !important; }
+
+.u-float--left  { float: left !important; }
+.u-float--right { float: right !important; }
+
+.u-clearfix { @include clearfix; }
+

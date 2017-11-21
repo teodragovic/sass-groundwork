@@ -1,0 +1,78 @@
+
+/**
+ * These classes have `!important` flag used proactively to force immutability,
+ * meaning these classes will always trump any component-based styles.
+ * Use them only when sure that property need to stay the
+ * same under all circumstances (diffrent viewports, hover states...).
+ */
+
+/*========================================*\
+    $SPACING
+\*========================================*/
+
+/**
+ *
+ * Utility spacing classes for setting margin and padding
+ *
+ * Classes are generated using Sass maps and loop functions.
+ * Use `$spacing-map` to add or remove spacing values.
+ * See output here: https://www.sassmeister.com/gist/3f536e407ec9e480a1f64349aba5497c
+ *
+ */
+
+// Maps for values and properties
+
+$spacing-map: (
+
+  "0":      0,
+  "0-25":   $spacing-0-25,
+  "0-5":    $spacing-0-5
+  "1":      $spacing-1,
+  "2":      $spacing-2
+
+) !default;
+
+$helpers: (
+
+  "m":    "margin",
+  "mt":   "margin-top",
+  "mr":   "margin-right",
+  "mb":   "margin-bottom",
+  "ml":   "margin-left",
+  "mh":   "margin-right" "margin-left",
+  "mv":   "margin-top" "margin-bottom",
+
+  "p":    "padding",
+  "pt":   "padding-top",
+  "pr":   "padding-right",
+  "pb":   "padding-bottom",
+  "pl":   "padding-left",
+  "ph":   "padding-right" "padding-left",
+  "pv":   "padding-top" "padding-bottom"
+
+) !default;
+
+
+// Loop over the helpers in $helpers
+@each $alias, $property in $helpers {
+
+  // Loop over spacing values in $spacing-map
+  @each $key, $value in $spacing-map {
+
+    // Create a new class
+    .#{$alias}--#{$key} {
+
+      // If helper contains several properties, loop over them
+      @if length($property) > 1 {
+        @each $prop in $property {
+          #{$prop}: $value !important;
+        }
+      }
+
+      // If helper is a single property, output it
+      @else {
+        #{$property}: $value !important;
+      }
+    }
+  }
+}

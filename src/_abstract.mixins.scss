@@ -58,7 +58,6 @@
   }
 }
 
-
 // Positioning helper mixins
 @mixin absolute($args) {
   @include position(absolute, $args);
@@ -110,6 +109,7 @@
     @content;
   }
 }
+
 
 // Advanced font rendering thingy
 @mixin font-smoothing($val: on) {

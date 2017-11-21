@@ -1,0 +1,33 @@
+
+/**
+ * These classes have `!important` flag used proactively to force immutability,
+ * meaning these classes will always trump any component-based styles.
+ * Use them only when sure that property need to stay the
+ * same under all circumstances (diffrent viewports, hover states...).
+ */
+
+/*========================================*\
+    $TYPE
+\*========================================*/
+
+.u-fw--light  { font-weight: 300 !important; }
+.u-fw--normal { font-weight: 400 !important; }
+.u-fw--medium { font-weight: 600 !important; }
+.u-fw--bold   { font-weight: 700 !important; }
+
+.u-txt--left    { text-align: left !important; }
+.u-txt--right   { text-align: right !important; }
+.u-txt--center  { text-align: center !important; }
+
+.u-txt--lowercase   { text-transform: lowercase !important; }
+.u-txt--uppercase   { text-transform: uppercase !important; }
+.u-txt--capitalize  { text-transform: capitalize !important; }
+
+.u-txt--strike       { text-decoration: line-through !important; }
+.u-txt--underline    { text-decoration: underline !important; }
+.u-txt--no-underline { text-decoration: none !important; }
+
+// TODO: https://bitsofco.de/the-new-system-font-stack/
+.u-font--sans-serif {
+  font-family: sans-serif;
+}
