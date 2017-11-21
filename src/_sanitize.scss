@@ -4,15 +4,13 @@
    ========================================================================== */
 
 /**
- * 1. Remove repeating backgrounds in all browsers (opinionated).
- * 2. Add box sizing inheritence in all browsers (opinionated).
+ * Remove repeating backgrounds in all browsers (opinionated).
  */
 
 *,
 ::before,
 ::after {
   background-repeat: no-repeat; /* 1 */
-  box-sizing: inherit; /* 2 */
 }
 
 /**
@@ -24,16 +22,6 @@
 ::after {
   text-decoration: inherit; /* 1 */
   vertical-align: inherit; /* 2 */
-}
-
-/**
- * 1. Add border box sizing in all browsers (opinionated).
- * 2. Add the default cursor in all browsers (opinionated).
- */
-
-html {
-  box-sizing: border-box; /* 1 */
-  cursor: default; /* 2 */
 }
 
 /* Grouping content (https://html.spec.whatwg.org/multipage/semantics.html#grouping-content)
@@ -68,33 +56,6 @@ nav ul {
   text-shadow: none;
 }
 
-/* Embedded content (https://html.spec.whatwg.org/multipage/embedded-content.html#embedded-content)
-   ========================================================================== */
-
-/*
- * Change the alignment on media elements in all browers (opinionated).
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
-
-/* Tabular data (https://html.spec.whatwg.org/multipage/tables.html#tables)
-   ========================================================================== */
-
-/**
- * Collapse border spacing
- */
-
-table {
-  border-collapse: collapse;
-}
-
 /* Forms (https://html.spec.whatwg.org/multipage/forms.html#forms)
    ========================================================================== */
 
@@ -109,72 +70,4 @@ textarea {
   color: inherit;
   font-size: inherit;
   line-height: inherit;
-}
-
-/**
- * Change the resize direction on textareas in all browsers (opinionated).
- */
-
-textarea {
-  resize: vertical;
-}
-
-/* User interaction (https://html.spec.whatwg.org/multipage/interaction.html#editing)
-   ========================================================================== */
-
-/*
- * Remove the tapping delay on clickable elements (opinionated).
- * 1. Remove the tapping delay in IE 10.
- */
-
-a,
-area,
-button,
-input,
-label,
-select,
-summary,
-textarea,
-[tabindex] {
-  -ms-touch-action: manipulation; /* 1 */
-  touch-action: manipulation;
-}
-
-
-/* ARIA (https://w3c.github.io/html-aria/)
-   ========================================================================== */
-
-/**
- * Change the cursor on busy elements (opinionated).
- */
-
-[aria-busy="true"] {
-  cursor: progress;
-}
-
-/*
- * Change the cursor on control elements (opinionated).
- */
-
-[aria-controls] {
-  cursor: pointer;
-}
-
-/*
- * Change the display on visually hidden accessible elements (opinionated).
- */
-
-[aria-hidden="false"][hidden]:not(:focus) {
-  clip: rect(0, 0, 0, 0);
-  display: inherit;
-  position: absolute;
-}
-
-/*
- * Change the cursor on disabled, not-editable, or otherwise
- * inoperable elements (opinionated).
- */
-
-[aria-disabled] {
-  cursor: default;
 }

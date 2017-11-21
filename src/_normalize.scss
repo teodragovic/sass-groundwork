@@ -245,7 +245,7 @@ svg:not(:root) {
    ========================================================================== */
 
 /**
- * 1. Remove the margin in Firefox and Safari.
+ * Remove the margin in Firefox and Safari.
  */
 
 button,
@@ -253,7 +253,7 @@ input,
 optgroup,
 select,
 textarea {
-  margin: 0; /* 1 */
+  margin: 0;
 }
 
 /**

@@ -7,6 +7,8 @@
 }
 
 html {
+  // Add the default cursor in all browsers
+  cursor: default;
   // Define height on root element so we can define <body> height in percentage
   height: 100%;
   // Use border-box for everything
@@ -36,11 +38,6 @@ body {
 // Credit: https://github.com/suitcss/base
 [tabindex="-1"]:focus {
   outline: none !important;
-}
-
-a {
-  // kill tap delay for IE10
-  touch-action: manipulation;
 }
 
 // Content grouping
