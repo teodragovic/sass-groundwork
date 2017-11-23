@@ -26,7 +26,7 @@ $spacing-map: (
 
   "0":      0,
   "0-25":   $spacing-0-25,
-  "0-5":    $spacing-0-5
+  "0-5":    $spacing-0-5,
   "1":      $spacing-1,
   "2":      $spacing-2
 
@@ -39,16 +39,16 @@ $helpers: (
   "mr":   "margin-right",
   "mb":   "margin-bottom",
   "ml":   "margin-left",
-  "mh":   "margin-right" "margin-left",
-  "mv":   "margin-top" "margin-bottom",
+  "mx":   "margin-right" "margin-left",
+  "my":   "margin-top" "margin-bottom",
 
   "p":    "padding",
   "pt":   "padding-top",
   "pr":   "padding-right",
   "pb":   "padding-bottom",
   "pl":   "padding-left",
-  "ph":   "padding-right" "padding-left",
-  "pv":   "padding-top" "padding-bottom"
+  "px":   "padding-right" "padding-left",
+  "py":   "padding-top" "padding-bottom"
 
 ) !default;
 
