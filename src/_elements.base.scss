@@ -122,9 +122,3 @@ summary,
 textarea {
   touch-action: manipulation;
 }
-
-// Always hide an element with the `hidden` HTML attribute (from PureCSS).
-// Needed for proper display in IE 10-.
-[hidden] {
-  display: none !important;
-}
