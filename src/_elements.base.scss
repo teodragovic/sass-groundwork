@@ -122,3 +122,16 @@ summary,
 textarea {
   touch-action: manipulation;
 }
+
+// Reset <progress> element
+progress {
+  appearance: none;
+}
+
+progress::-moz-progress-bar {
+  background: transparent;
+}
+
+progress::-webkit-progress-bar {
+  background: transparent;
+}
